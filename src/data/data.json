@@ -18,7 +18,7 @@
       "id": "swynx",
       "name": "Swynx Studio",
       "description": "The central product studio connecting everything.",
-      "tech": ["Next.js", "TypeScript"],
+      "tech": ["Next.js", "TypeScript", "Built with AI"],
       "status": "Core",
       "link": "swynx.dev"
     },
