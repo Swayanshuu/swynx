@@ -1,0 +1,146 @@
+{
+  "brand": {
+    "name": "Swynx",
+    "domain": "swynx.dev",
+    "tagline": "Building products that connect people, solve problems, and create impact."
+  },
+  "hero": {
+    "headline": "Building products that matter.",
+    "subheadline": "Swynx is a product studio creating modern applications, communities, and digital experiences for the next generation.",
+    "stats": [
+      { "label": "Products Built", "value": "12+" },
+      { "label": "Users Reached", "value": "50K+" },
+      { "label": "Open Source Contributions", "value": "100+" }
+    ]
+  },
+  "ecosystem": [
+    {
+      "id": "swynx",
+      "name": "Swynx Studio",
+      "description": "The central product studio connecting everything.",
+      "tech": ["Next.js", "TypeScript"],
+      "status": "Core",
+      "link": "swynx.dev"
+    },
+    {
+      "id": "linkpeer",
+      "name": "LinkPeer",
+      "description": "Connecting People Beyond Profiles",
+      "tech": ["Flutter", "Supabase", "PostgreSQL", "Riverpod"],
+      "status": "Featured",
+      "link": "linkpeer.swynx.dev"
+    },
+    {
+      "id": "batchmate",
+      "name": "BatchMate",
+      "description": "Streamlining student batch management.",
+      "tech": ["Flutter", "Firebase", "Provider"],
+      "status": "Development",
+      "link": "#"
+    },
+    {
+      "id": "gitglow",
+      "name": "GitGlow",
+      "description": "Beautiful insights for GitHub profiles.",
+      "tech": ["Flutter", "Kotlin"],
+      "status": "Active",
+      "link": "#"
+    },
+    {
+      "id": "shorten-links",
+      "name": "Shorten Links",
+      "description": "Fast and reliable URL shortener.",
+      "tech": ["HTML", "CSS", "JavaScript", "Spring Boot"],
+      "status": "Active",
+      "link": "go.swynx.dev"
+    }
+  ],
+  "featuredProduct": {
+    "name": "LinkPeer",
+    "headline": "LinkPeer — Connecting People Beyond Profiles",
+    "features": [
+      "Dynamic Portfolios",
+      "Seamless Networking",
+      "Real-time Analytics"
+    ]
+  },
+  "timeline": [
+    {
+      "year": "2024",
+      "description": "Started building apps and exploring product development."
+    },
+    {
+      "year": "2025",
+      "description": "Built production-ready projects and participated in hackathons."
+    },
+    {
+      "year": "2026",
+      "description": "Created Swynx and began building larger-scale products and communities."
+    },
+    {
+      "year": "Future",
+      "description": "Expanding into developer tools, AI products, and scalable platforms."
+    }
+  ],
+  "builder": {
+    "name": "Swayanshu Sarthak Sadangi",
+    "title": "Computer Science Engineering Student & Product Builder",
+    "roles": [
+      "Flutter Developer",
+      "Spring Boot Developer",
+      "Product Builder",
+      "Hackathon Finalist"
+    ],
+    "portfolioUrl": "https://swayanshu.swynx.dev"
+  },
+  "techStack": [
+    "Flutter",
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Firebase",
+    "Supabase",
+    "Docker",
+    "GitHub",
+    "Vercel"
+  ],
+  "vision": {
+    "headline": "Why Swynx Exists",
+    "content": "Swynx was created to transform ideas into impactful products. The mission is to build applications, communities, and platforms that solve real-world problems while empowering users through technology."
+  },
+  "roadmap": [
+    {
+      "year": "2026",
+      "items": ["LinkPeer Launch", "Ecosystem Growth"]
+    },
+    {
+      "year": "2027",
+      "items": ["AI Products", "Developer Tools"]
+    },
+    {
+      "year": "2028",
+      "items": ["SaaS Expansion"]
+    },
+    {
+      "year": "2029+",
+      "items": ["Global Scale Products"]
+    }
+  ],
+  "metrics": [
+    { "label": "Products Built", "value": 5 },
+    { "label": "Active Users", "value": 500 },
+    { "label": "GitHub Contributions", "value": 500 },
+    { "label": "Technologies Used", "value": 15 }
+  ],
+  "footer": {
+    "tagline": "Building the future, one product at a time.",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/swayanshuu" },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/swayanshu-sarthak-sadangi/"
+      },
+      { "label": "Portfolio", "url": "https://swayanshu.swynx.dev" }
+    ]
+  }
+}
