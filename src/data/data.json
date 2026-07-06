@@ -85,12 +85,7 @@
   "builder": {
     "name": "Swayanshu Sarthak Sadangi",
     "title": "Computer Science Engineering Student & Product Builder",
-    "roles": [
-      "Flutter Developer",
-      "Spring Boot Developer",
-      "Product Builder",
-      "Hackathon Finalist"
-    ],
+    "roles": ["Flutter Developer", "Spring Boot Developer", "Product Builder"],
     "portfolioUrl": "https://swayanshu.swynx.dev"
   },
   "techStack": [

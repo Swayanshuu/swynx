@@ -7,7 +7,7 @@ export default function Vision() {
   const { vision } = data;
 
   return (
-    <section id="vision" className="relative py-32 px-6 overflow-hidden">
+    <section id="vision" className="relative py-32 md:py-40 px-6 overflow-hidden">
       <div className="mx-auto max-w-4xl text-center relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -34,9 +34,11 @@ export default function Vision() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.4, delay: 0.2 + i * 0.05 }}
               className={
-                word.includes("Swynx") || word.includes("impactful") || word.includes("empowering") 
-                  ? "text-white" 
-                  : ""
+                word.includes("Swynx")
+                  ? "text-gradient font-bold"
+                  : word.includes("impactful") || word.includes("empowering") 
+                    ? "text-white" 
+                    : ""
               }
             >
               {word}{" "}

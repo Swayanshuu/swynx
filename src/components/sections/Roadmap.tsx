@@ -7,8 +7,8 @@ export default function Roadmap() {
   const { roadmap } = data;
 
   return (
-    <section className="relative py-32 px-6">
-      <div className="mx-auto max-w-5xl">
+    <section className="relative py-32 md:py-40 px-6">
+      <div className="mx-auto max-w-4xl">
         <div className="mb-20 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

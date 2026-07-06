@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import data from "@/data/data.json";
 
 // Helper positions to create a constellation/ecosystem look
@@ -17,7 +18,7 @@ export default function ProductEcosystem() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="products" className="relative flex min-h-[90vh] flex-col items-center justify-center py-24 overflow-hidden">
+    <section id="products" className="relative flex min-h-[90vh] flex-col items-center justify-center py-32 md:py-40 overflow-hidden">
       <div className="mb-16 text-center z-10 px-6">
         <h2 className="text-4xl font-bold md:text-5xl lg:text-6xl text-white mb-6">Product Ecosystem</h2>
         <p className="text-lg text-text-muted max-w-2xl mx-auto">
@@ -59,10 +60,15 @@ export default function ProductEcosystem() {
           const isHovered = hoveredId === product.id;
           const pos = nodePositions[index];
 
+          const href = product.link !== "#" ? (product.link.startsWith("http") ? product.link : `https://${product.link}`) : undefined;
+
           return (
-            <motion.div
+            <motion.a
+              href={href}
+              target={href ? "_blank" : undefined}
+              rel={href ? "noopener noreferrer" : undefined}
               key={product.id}
-              className="absolute -translate-x-1/2 -translate-y-1/2 z-20"
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-20 block outline-none"
               style={{ top: pos.top, left: pos.left }}
               onHoverStart={() => setHoveredId(product.id)}
               onHoverEnd={() => setHoveredId(null)}
@@ -84,8 +90,9 @@ export default function ProductEcosystem() {
                   <div className="absolute inset-0 animate-pulse rounded-full border border-primary-1/30" />
                 )}
                 
-                <h3 className={`font-bold text-white transition-all ${isHovered ? "text-2xl mb-2" : "text-sm text-center"}`}>
+                <h3 className={`font-bold text-white transition-all flex items-center justify-center gap-2 ${isHovered ? "text-2xl mb-2" : "text-sm text-center"}`}>
                   {isHovered ? product.name : product.name.split(" ")[0]}
+                  {isHovered && href && <ExternalLink className="w-5 h-5 text-accent-1" />}
                 </h3>
 
                 {isHovered && (
@@ -108,18 +115,31 @@ export default function ProductEcosystem() {
                   </motion.div>
                 )}
               </motion.div>
-            </motion.div>
+            </motion.a>
           );
         })}
       </div>
 
       {/* Mobile fallback view */}
       <div className="w-full px-6 flex flex-col gap-6 md:hidden">
-        {data.ecosystem.map((product) => (
-          <div key={product.id} className="glass p-6 rounded-2xl border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10 blur-xl bg-primary-1 w-24 h-24 rounded-full" />
-            <h3 className="text-2xl font-bold text-white mb-2">{product.name}</h3>
-            <p className="text-text-muted mb-4 text-sm">{product.description}</p>
+        {data.ecosystem.map((product) => {
+          const href = product.link !== "#" ? (product.link.startsWith("http") ? product.link : `https://${product.link}`) : undefined;
+          const Wrapper = href ? "a" : "div";
+
+          return (
+            <Wrapper 
+              href={href}
+              target={href ? "_blank" : undefined}
+              rel={href ? "noopener noreferrer" : undefined}
+              key={product.id} 
+              className="glass p-6 rounded-2xl border border-white/10 relative overflow-hidden block transition-transform hover:scale-[1.02]"
+            >
+              <div className="absolute top-0 right-0 p-4 opacity-10 blur-xl bg-primary-1 w-24 h-24 rounded-full" />
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-2xl font-bold text-white">{product.name}</h3>
+                {href && <ExternalLink className="w-5 h-5 text-accent-1" />}
+              </div>
+              <p className="text-text-muted mb-4 text-sm">{product.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {product.tech.map(t => (
                 <span key={t} className="text-xs px-2 py-1 bg-white/5 rounded-md text-primary-2 border border-white/10">
@@ -130,8 +150,9 @@ export default function ProductEcosystem() {
             <span className="text-xs font-semibold uppercase tracking-wider text-accent-2">
               {product.status}
             </span>
-          </div>
-        ))}
+            </Wrapper>
+          );
+        })}
       </div>
     </section>
   );

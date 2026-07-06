@@ -38,8 +38,8 @@ export default function Metrics() {
   const { metrics } = data;
 
   return (
-    <section className="relative py-32 px-6">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative py-32 md:py-40 border-t border-white/5">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {metrics.map((metric, idx) => (
             <motion.div

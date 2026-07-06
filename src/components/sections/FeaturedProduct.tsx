@@ -10,8 +10,8 @@ export default function FeaturedProduct() {
   const icons = [Users, Sparkles, Activity];
 
   return (
-    <section className="relative py-32 px-6">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative py-32 md:py-40">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -57,8 +57,8 @@ export default function FeaturedProduct() {
           >
             {/* Dashboard UI Mockup */}
             <div className="absolute inset-0 bg-[#050505] flex">
-              {/* Sidebar */}
-              <div className="w-1/4 h-full border-r border-white/5 bg-white/[0.02] p-6 flex flex-col gap-6">
+              {/* Sidebar (Hidden on Mobile) */}
+              <div className="hidden md:flex w-1/4 h-full border-r border-white/5 bg-white/[0.02] p-6 flex-col gap-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-full bg-white/10" />
                   <div className="w-24 h-4 rounded bg-white/10" />
@@ -93,7 +93,7 @@ export default function FeaturedProduct() {
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                   {[1, 2, 3].map(i => (
                     <div key={i} className="h-32 rounded-xl border border-white/5 bg-white/[0.02] p-4 flex flex-col justify-between">
                       <div className="w-8 h-8 rounded-full bg-white/5" />

@@ -5,7 +5,7 @@ import data from "@/data/data.json";
 
 export default function Story() {
   return (
-    <section id="story" className="relative py-32 px-6 overflow-hidden">
+    <section id="story" className="relative py-32 md:py-40 px-6 overflow-hidden">
       <div className="mx-auto max-w-4xl relative z-10">
         <div className="mb-20 text-center">
           <motion.h2
