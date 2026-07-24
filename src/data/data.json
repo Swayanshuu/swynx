@@ -8,9 +8,9 @@
     "headline": "Building products that matter.",
     "subheadline": "Swynx is a product studio creating modern applications, communities, and digital experiences for the next generation.",
     "stats": [
-      { "label": "Products Built", "value": "12+" },
-      { "label": "Users Reached", "value": "50K+" },
-      { "label": "Open Source Contributions", "value": "100+" }
+      { "label": "Products Built", "value": "99+" },
+      { "label": "Users Reached", "value": "99K+" },
+      { "label": "Open Source Contributions", "value": "999+" }
     ]
   },
   "ecosystem": [
@@ -122,10 +122,10 @@
     }
   ],
   "metrics": [
-    { "label": "Products Built", "value": 5 },
-    { "label": "Active Users", "value": 500 },
-    { "label": "GitHub Contributions", "value": 500 },
-    { "label": "Technologies Used", "value": 15 }
+    { "label": "Products Built", "value": 9 },
+    { "label": "Active Users", "value": 999 },
+    { "label": "GitHub Contributions", "value": 999 },
+    { "label": "Technologies Used", "value": 99 }
   ],
   "footer": {
     "tagline": "Building the future, one product at a time.",
