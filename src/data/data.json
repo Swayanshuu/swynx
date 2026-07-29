@@ -54,14 +54,6 @@
       "tech": ["Flutter", "Kotlin"],
       "status": "Active",
       "link": "#"
-    },
-    {
-      "id": "shorten-links",
-      "name": "Shorten Links",
-      "description": "Fast and reliable URL shortener.",
-      "tech": ["HTML", "CSS", "JavaScript", "Spring Boot"],
-      "status": "Active",
-      "link": "go.swynx.dev"
     }
   ],
   "featuredProduct": {
