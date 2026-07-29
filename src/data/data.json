@@ -31,6 +31,15 @@
       "link": "linkpeer.swynx.dev"
     },
     {
+  "id": "shorten-links",
+  "name": "Shorten Links",
+  "description": "Create clean, custom short links & track analytics in real time",
+  "tech": ["Next.js", "Flutter", "Spring Boot", "Firebase", "PostgreSQL"],
+  "status": "Featured",
+  "link": "visit.go.swynx.dev"
+}
+,
+    {
       "id": "batchmate",
       "name": "BatchMate",
       "description": "Streamlining student batch management.",
