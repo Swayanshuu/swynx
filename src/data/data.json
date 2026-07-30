@@ -27,33 +27,32 @@
       "name": "LinkPeer",
       "description": "Connecting People Beyond Profiles",
       "tech": ["Flutter", "Supabase", "PostgreSQL", "Riverpod"],
-      "status": "Featured",
+      "status": "Active",
       "link": "linkpeer.swynx.dev"
     },
     {
       "id": "geoquest",
       "name": "GeoQuest",
-      "description": "Letting the next generation know about the environment with a social way",
+      "description": "Let the next generation know about the environment with a social & gamified way",
       "tech": ["Flutter", "Supabase", "PostgreSQL", "Riverpod"],
       "status": "Featured",
       "link": "swynx.dev"
     },
     {
-  "id": "shorten-links",
-  "name": "Shorten Links",
-  "description": "Create clean, custom short links & track analytics in real time",
-  "tech": ["Next.js", "Flutter", "Spring Boot", "Firebase", "PostgreSQL"],
-  "status": "Featured",
-  "link": "visit.go.swynx.dev"
-}
-,
+      "id": "shorten-links",
+      "name": "Shorten Links",
+      "description": "Create clean, custom short links & track analytics in real time",
+      "tech": ["Next.js", "Flutter", "Spring Boot", "Firebase", "PostgreSQL"],
+      "status": "Active",
+      "link": "visit.go.swynx.dev"
+    },
     {
       "id": "batchmate",
       "name": "BatchMate",
       "description": "Streamlining student batch management.",
       "tech": ["Flutter", "Firebase", "Provider"],
-      "status": "Development",
-      "link": "#"
+      "status": "Active",
+      "link": "https://github.com/Swayanshuu/Batch-Mate"
     },
     {
       "id": "gitglow",
@@ -61,12 +60,13 @@
       "description": "Beautiful insights for GitHub profiles.",
       "tech": ["Flutter", "Kotlin"],
       "status": "Active",
-      "link": "#"
+      "link": "https://github.com/Swayanshuu/GitGlow"
     }
   ],
   "featuredProduct": {
     "name": "LinkPeer",
     "headline": "LinkPeer — Connecting People Beyond Profiles",
+    "image": "https://raw.githubusercontent.com/Swayanshuu/SWYNX-Hepler/main/LinkPeer/LP-FG.png",
     "features": [
       "Dynamic Portfolios",
       "Seamless Networking",

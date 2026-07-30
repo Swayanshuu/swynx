@@ -40,7 +40,7 @@ export default function FeaturedProduct() {
             transition={{ delay: 0.2 }}
             className="text-xl text-text-muted max-w-2xl mx-auto"
           >
-            {featuredProduct.headline.split("—")[1]}
+            {featuredProduct.headline.includes("—") ? featuredProduct.headline.split("—")[1].trim() : featuredProduct.headline}
           </motion.p>
         </div>
 
@@ -53,59 +53,95 @@ export default function FeaturedProduct() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-bg-darker"
+            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-bg-darker flex items-center justify-center group"
           >
-            {/* Dashboard UI Mockup */}
-            <div className="absolute inset-0 bg-[#050505] flex">
-              {/* Sidebar (Hidden on Mobile) */}
-              <div className="hidden md:flex w-1/4 h-full border-r border-white/5 bg-white/[0.02] p-6 flex-col gap-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-white/10" />
-                  <div className="w-24 h-4 rounded bg-white/10" />
-                </div>
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="w-full h-8 rounded-md bg-white/5" />
-                ))}
-                <div className="mt-auto w-full h-32 rounded-xl border border-white/10 bg-gradient-to-t from-white/5 to-transparent p-4 flex flex-col justify-end">
-                  <div className="w-16 h-3 rounded bg-white/20 mb-2" />
-                  <div className="w-24 h-2 rounded bg-white/10" />
-                </div>
-              </div>
-              
-              {/* Main Content */}
-              <div className="flex-1 p-8 flex flex-col gap-8 overflow-hidden">
-                {/* Header */}
-                <div className="flex justify-between items-center">
-                  <div className="w-48 h-6 rounded bg-white/10" />
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full bg-white/10" />
-                    <div className="w-8 h-8 rounded-full bg-white/10" />
+            {/* Dynamic Feature Graphic Image Showcase */}
+            {(() => {
+              const rawUrl = (featuredProduct as Record<string, any>).image || 
+                             (featuredProduct as Record<string, any>).imageUrl || 
+                             (featuredProduct as Record<string, any>).graphic;
+
+              let graphicUrl = typeof rawUrl === "string" ? rawUrl.trim() : "";
+              if (graphicUrl.includes("github.com") && graphicUrl.includes("/blob/")) {
+                graphicUrl = graphicUrl
+                  .replace("github.com", "raw.githubusercontent.com")
+                  .replace("/blob/", "/")
+                  .replace("?raw=true", "");
+              }
+
+              if (graphicUrl !== "") {
+                return (
+                  <div className="relative w-full h-full flex items-center justify-center overflow-hidden bg-bg-darker">
+                    {/* Ambient blurred backdrop glow */}
+                    <img 
+                      src={graphicUrl} 
+                      alt="" 
+                      className="absolute inset-0 w-full h-full object-cover blur-3xl opacity-30 scale-110 pointer-events-none"
+                    />
+                    {/* Main graphic: 100% visible without any cuts */}
+                    <img
+                      src={graphicUrl}
+                      alt={featuredProduct.name}
+                      className="relative z-10 w-full h-full object-contain p-2 md:p-4 transition-transform duration-700 group-hover:scale-[1.01]"
+                    />
                   </div>
-                </div>
+                );
+              }
 
-                {/* Hero Card */}
-                <div className="w-full h-48 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-transparent p-8 relative overflow-hidden">
-                  <div className="absolute -right-10 -top-10 w-48 h-48 bg-white/10 blur-3xl rounded-full" />
-                  <div className="w-32 h-6 rounded bg-white/20 mb-4" />
-                  <div className="w-64 h-4 rounded bg-white/10 mb-2" />
-                  <div className="w-48 h-4 rounded bg-white/10" />
-                  <div className="absolute bottom-8 left-8 w-24 h-8 rounded-full bg-white/10" />
-                </div>
-
-                {/* Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="h-32 rounded-xl border border-white/5 bg-white/[0.02] p-4 flex flex-col justify-between">
-                      <div className="w-8 h-8 rounded-full bg-white/5" />
-                      <div>
-                        <div className="w-16 h-3 rounded bg-white/10 mb-2" />
-                        <div className="w-12 h-5 rounded bg-white/20" />
+              // Fallback UI Mockup when no graphic URL is specified in data.json
+              return (
+                <div className="absolute inset-0 bg-[#050505] flex">
+                  {/* Sidebar (Hidden on Mobile) */}
+                  <div className="hidden md:flex w-1/4 h-full border-r border-white/5 bg-white/[0.02] p-6 flex-col gap-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-white/10" />
+                      <div className="w-24 h-4 rounded bg-white/10" />
+                    </div>
+                    {[1, 2, 3, 4].map(i => (
+                      <div key={i} className="w-full h-8 rounded-md bg-white/5" />
+                    ))}
+                    <div className="mt-auto w-full h-32 rounded-xl border border-white/10 bg-gradient-to-t from-white/5 to-transparent p-4 flex flex-col justify-end">
+                      <div className="w-16 h-3 rounded bg-white/20 mb-2" />
+                      <div className="w-24 h-2 rounded bg-white/10" />
+                    </div>
+                  </div>
+                  
+                  {/* Main Content */}
+                  <div className="flex-1 p-8 flex flex-col gap-8 overflow-hidden">
+                    {/* Header */}
+                    <div className="flex justify-between items-center">
+                      <div className="w-48 h-6 rounded bg-white/10" />
+                      <div className="flex gap-4">
+                        <div className="w-8 h-8 rounded-full bg-white/10" />
+                        <div className="w-8 h-8 rounded-full bg-white/10" />
                       </div>
                     </div>
-                  ))}
+
+                    {/* Hero Card */}
+                    <div className="w-full h-48 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-transparent p-8 relative overflow-hidden">
+                      <div className="absolute -right-10 -top-10 w-48 h-48 bg-white/10 blur-3xl rounded-full" />
+                      <div className="w-32 h-6 rounded bg-white/20 mb-4" />
+                      <div className="w-64 h-4 rounded bg-white/10 mb-2" />
+                      <div className="w-48 h-4 rounded bg-white/10" />
+                      <div className="absolute bottom-8 left-8 w-24 h-8 rounded-full bg-white/10" />
+                    </div>
+
+                    {/* Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                      {[1, 2, 3].map(i => (
+                        <div key={i} className="h-32 rounded-xl border border-white/5 bg-white/[0.02] p-4 flex flex-col justify-between">
+                          <div className="w-8 h-8 rounded-full bg-white/5" />
+                          <div>
+                            <div className="w-16 h-3 rounded bg-white/10 mb-2" />
+                            <div className="w-12 h-5 rounded bg-white/20" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              );
+            })()}
           </motion.div>
         </div>
 
