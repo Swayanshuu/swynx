@@ -31,6 +31,14 @@
       "link": "linkpeer.swynx.dev"
     },
     {
+      "id": "geoquest",
+      "name": "GeoQuest",
+      "description": "Letting the next generation know about the environment with a social way",
+      "tech": ["Flutter", "Supabase", "PostgreSQL", "Riverpod"],
+      "status": "Featured",
+      "link": "swynx.dev"
+    },
+    {
   "id": "shorten-links",
   "name": "Shorten Links",
   "description": "Create clean, custom short links & track analytics in real time",
